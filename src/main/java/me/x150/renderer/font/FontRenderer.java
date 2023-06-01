@@ -194,6 +194,7 @@ public class FontRenderer implements Closeable {
                 continue;
             }
             Glyph glyph = locateGlyph1(c);
+            if (glyph == null) return;
             if (glyph.value() != ' ') { // we only need to really draw the glyph if it's not blank, otherwise we can just skip its width and that'll be it
                 Identifier i1 = glyph.owner().bindToTexture;
                 DrawEntry entry = new DrawEntry(xOffset, yOffset, r2, g2, b2, glyph);
